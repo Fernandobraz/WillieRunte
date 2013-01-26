@@ -9,6 +9,10 @@ class ShowcaseController < ApplicationController
 
   end
 
+  def about
+
+  end
+
   private
   def find_book
     @book = Book.find(params[:id]) if params[:id]

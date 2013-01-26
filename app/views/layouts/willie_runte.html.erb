@@ -28,9 +28,7 @@
                   </li>
                   <% end %>
                   <li class="item  top_level">
-                    <a href='/about-me'  class="top_level_link">
-                      About Me
-                    </a>
+                    <%= link_to 'About Me', abouts_path, class: 'top_level_link' %>
                   </li>
                   <li class="social_icons_wrap top_level">
                     <ul class="social_icons">
@@ -56,6 +54,11 @@
                         </a>
                       </li>
                     </ul>
+                  </li>
+                  <li id="share_button" class="item top_level">
+                    <a href="#" id="share_4ormat_link" class="top_level_link Light">Share</a>
+                  </li>
+                </ul>
               </div>
             </div>
           </div>
