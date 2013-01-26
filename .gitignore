@@ -37,7 +37,13 @@ Icon?
 ehthumbs.db
 Thumbs.db
 
-#public fotos #
+# public fotos #
+####################
 
 /public/assets/*
-/tmp/*
+/tmp/
+
+# Arquivos do emacs #
+#####################
+*.#
+.#*
