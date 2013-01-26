@@ -11,3 +11,526 @@
  *= require_self
  *= require_tree .
  */
+
+
+@font-face {
+    font-family: 'ColaborateThinRegular';
+    src: url('fonts/colaborate/ColabThi-webfont.eot');
+    src: url('fonts/colaborate/ColabThi-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/colaborate/ColabThi-webfont.woff') format('woff'),
+         url('fonts/colaborate/ColabThi-webfont.ttf') format('truetype'),
+         url('fonts/colaborate/ColabThi-webfont.svg#ColaborateThinRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ColaborateLightRegular';
+    src: url('fonts/colaborate/ColabLig-webfont.eot');
+    src: url('fonts/colaborate/ColabLig-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/colaborate/ColabLig-webfont.woff') format('woff'),
+         url('fonts/colaborate/ColabLig-webfont.ttf') format('truetype'),
+         url('fonts/colaborate/ColabLig-webfont.svg#ColaborateLightRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'ColaborateRegular';
+    src: url('fonts/colaborate/ColabReg-webfont.eot');
+    src: url('fonts/colaborate/ColabReg-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/colaborate/ColabReg-webfont.woff') format('woff'),
+         url('fonts/colaborate/ColabReg-webfont.ttf') format('truetype'),
+         url('fonts/colaborate/ColabReg-webfont.svg#ColaborateRegular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+  line-height: 1;
+  font-size: 12px ;
+  font-family: Helvetica Neue, Helvetica, Arial;
+  color: #555555;
+  /* This is set to important else it breaks on Opera browsers */
+  background: #ffffff!important;
+
+}
+
+h1, h2, h3, h4, h5, h6 { color:#000000; margin:0;
+  font-family:  ColaborateThinRegular;
+}
+
+h1 {
+  letter-spacing: 1px;
+  line-height:1.1em;
+  font-size: 45px;
+}
+
+h2 {
+  font-size: 33px;
+  letter-spacing: 1px;
+  line-height: 1em;
+}
+
+a {  outline: none;  color: #00A1F9; }
+a:hover {  color: #111; }
+
+blockquote, q {	quotes: none; }
+blockquote:before, blockquote:after, q:before, q:after {	content: ''; 	content: none; }
+table {	border-collapse: collapse;	border-spacing: 0; }
+form div ,table td, table th { padding: 5px;}
+
+::-moz-selection{ background: #A5A29F; color:#fff; text-shadow: none; }
+::selection { background:#A5A29F; color:#fff; text-shadow: none; }
+
+p { margin: 0; }
+
+p, ul li, ol li {  line-height: 1.5em; }
+em {  font-style:italic; }
+strong {  font-weight:bold; }
+
+/* Required to Render UL and OL elements correclty */
+ol {   list-style: decimal inside none; }
+ul {   list-style: disc inside none; }
+
+
+
+
+/* ------ ClearFix ------ */
+.clearfix:after {	content: ".";	display: block;	clear: both;	visibility: hidden;	line-height: 0;	height: 0; }
+.clearfix { display: inline-block; }
+* html .clearfix { height: 1%; }
+.clearfix { display: block; }
+
+
+
+
+/* Menu Definitions */
+#menu_container {
+  position: fixed;
+  width: 100%;
+  margin: auto 0px ;
+  text-align: center;
+  z-index: 33333;
+  top: 0;
+  min-width: 1010px;
+  background: #ffffff!important;
+}
+
+
+#menu_container .menu_padding {
+  padding: 15px 20px;
+}
+
+
+#menu_container #logo a  { text-decoration: none; color: #000000;}
+#menu_container #logo a img { border:0px; max-width: 390px; max-height: 120px;}
+#menu_container #logo h1 {
+  font-size: 32px; padding:0px; margin: 0px;
+  font-family: ColaborateThinRegular;
+  z-index: 3333;
+  font-weight: normal;
+}
+
+#menu_container #logo h1 a:hover { text-decoration:none; color: #FFFFFF; }
+
+/* Menu */
+
+#menu ul { list-style-type:none;}
+#menu li.top_level {
+  margin-bottom: 1px;
+  display: inline-block;
+  padding:0 1px 0 0px;
+  vertical-align: top;
+  zoom: 1;
+  *display:inline;
+
+
+}
+
+
+#menu .dropdown {
+  float: none;
+  z-index: 100;
+  position: absolute;
+  width: 180px;
+  height: 0;
+  overflow: hidden;
+
+  -webkit-transition: height 700ms;
+  -moz-transition: height 700ms;
+}
+
+
+#menu .category:hover .dropdown,
+#menu .category:focus .dropdown {
+  -webkit-transition: height 940ms;
+  -moz-transition: height 940ms;
+}
+
+
+#menu .item a,
+#menu .category a,
+#menu .category a:visited,
+#menu .item a:visited {
+  -webkit-transition: background-color 940ms;
+  -moz-transition: background-color 940ms;
+  -webkit-font-smoothing: antialiased;
+
+  font-size: 13px;
+  line-height: 1em;
+
+  text-decoration: none;
+  display: block;
+
+  font-family: ColaborateRegular;
+
+
+    padding: 0.6em 1em;
+    background-color: #000000;
+    color: #ffffff;
+
+
+}
+
+
+
+
+  #menu a.top_level_link  {
+    -webkit-border-radius: 4px;
+    border-radius: 4px;
+    -moz-border-radius: 4px;
+    margin: 0 3px 3px 0;
+  }
+
+
+
+
+#menu .dropdown a {
+  text-align: left;
+}
+
+
+#menu .item a:hover,
+#menu .category a:hover,
+#menu .item a:focus,
+#menu .category a:focus {
+  text-decoration: none;
+  -webkit-transition: all 0ms;
+  -moz-transition: all 0ms;
+
+
+
+    background: #444444;
+
+
+}
+
+#menu .selected a {
+  background: #444444!important; /* !important needed to override styling from transitions */
+}
+
+/* Share button */
+#menu #share_button a {
+  background: #000000;
+  color: #ffffff;
+  margin: 3px 3px 4px 0;
+  padding: 5px 11px;
+  font-weight: bold;
+  line-height: 1em;
+  letter-spacing: 0.04em;
+  border-radius: 16px;
+  -moz-border-radius: 16px;
+  -webkit-border-radius: 16px;
+
+  opacity: 0.6;
+
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.3s linear;
+
+  font-family: arial;
+  font-size: 11px;
+
+}
+  #menu #share_button a:hover,
+  #menu #share_button a:focus {
+    opacity: 1;
+  }
+
+
+/******* TOP *********/
+
+
+#head_logo { float:left;
+  padding-right: 40px;
+  max-width: 390px;
+  text-align: left;
+  min-height: 30px;
+  }
+
+.gallery .footer_text {
+	position: fixed;
+	bottom: 3px;
+  margin: 0;
+	width: 100%;
+  padding: 8px 3px;
+}
+.footer_text {
+  font-size: 11px;
+  font-family: Helvetica Neue, Helvetica, Arial;
+  color: #888888;;
+	text-align: center;
+	margin: 20px 0;
+}
+
+
+
+/* Social Icons */
+.social_icons_wrap { margin-right: 6px; }
+
+ul.social_icons {
+  text-align: left;
+  float:right;
+  list-style-type:none;
+  margin: 4px 0 0 15px;
+
+}
+
+ul.social_icons li.social_icon {
+  display: inline-block;
+  vertical-align: top;
+  zoom: 1;
+  *display:inline;
+  padding-right: 4px;
+  padding-left: 4px;
+}
+
+ul.social_icons li.social_icon a {
+  height: 20px;
+  width: 20px;
+  display: block;
+  text-indent: -9999px;
+  opacity: 0.6;
+  padding: 0px;
+  -moz-transition: opacity 0.3s linear;
+  -o-transition: opacity 0.3s linear;
+  -webkit-transition: opacity 0.3s linear;
+}
+
+ul.social_icons  li.social_icon a:hover { opacity: 1; }
+
+  ul.social_icons  li.icon_twitter a { background:transparent url(http://a1.4ormat.com/theme_versions/83708/assets/images/socialicons_dark.png ) no-repeat scroll  -40px 0px; }
+  ul.social_icons  li.icon_linkedin a { background:transparent url(http://a1.4ormat.com/theme_versions/83708/assets/images/socialicons_dark.png ) no-repeat scroll 0px 0px;  }
+  ul.social_icons  li.icon_facebook a { background:transparent url(http://a1.4ormat.com/theme_versions/83708/assets/images/socialicons_dark.png ) no-repeat scroll -80px 0px; }
+
+
+/****** CONTENT *******/
+
+
+.nav {
+  ;
+    margin-left: 400px;
+  ;
+}
+.nav.left_aligned_menu { text-align: left;}
+.nav { text-align: right;}
+.nav .menu_wrap {  font-size: 0;}
+
+
+/* Center Horizontal Vertically */
+.gallery #content .container {
+  position: absolute;
+  top: 50%;
+
+
+    height: 700px;
+    margin-top: -350px;
+
+
+  /* This fixes IE7*/
+  *overflow:visible;
+
+}
+
+/******* GALLERY  *********/
+
+.gallery .asset {
+  padding: 0px 0;
+  float:left;
+}
+
+
+/* If laoding icon is displayed */
+.gallery .asset.loading .img {
+  width: 550px;
+
+
+    height: 700px;
+
+
+   }
+   .gallery .asset.loading .img img {
+     width: 20px;
+     height: 20px;
+     position: absolute;
+     top: 50%;
+     left: 50%;
+    }
+
+
+/* Image Text on Image Assets Popups */
+.gallery .image .img {
+  position: relative;
+}
+.gallery .image .img img {
+
+    height: 700px;
+
+  width: auto;
+  display: block;
+}
+.gallery .image .image_text {
+  position: absolute;
+  background: #000000;
+  color: #ffffff;
+  padding: 5px 10px;
+  text-decoration:none;
+  bottom: 10px;
+  right: 10px;
+  z-index:333;
+  display: none;
+}
+.gallery .asset .image_text_container {
+  bottom: 0px; left: 0;
+  text-align: left;
+
+  position: absolute;
+  padding: 10px;
+  margin: 10px;
+  background: #000000;
+  color: #ffffff;
+}
+
+.gallery .asset.image .image_text_container p {
+  padding-right: 20px;
+}
+
+.gallery .assets {
+  margin-left: 20px;
+  overflow: hidden
+}
+
+#assets_wrap {
+  overflow: hidden
+}
+
+/* Title Elements */
+.gallery .asset.title .wrap {
+  overflow: auto
+  width: 600px;
+}
+.gallery .asset.title .wrap {
+
+    height: 700px;
+
+  overflow:hidden;
+}
+.gallery .asset.title .asset_copy {
+  width: 600px;
+  padding: 15px 0 5px;
+}
+
+.gallery .asset.title .inner_wrap { width: 635px; }
+
+/* Text Elements */
+.gallery .asset.txt .wrap {
+  width: 600px;
+  overflow: auto;
+}
+.gallery .assets .asset.txt .wrap .text_content {
+  overflow: hidden;
+  padding: 0px 30px 0 20px;
+  width: 545px;
+}
+.gallery .assets .asset.txt .wrap {
+
+    height: 700px;
+
+  overflow:hidden;
+}
+
+/*-- Video Element --*/
+
+
+  body.gallery .assets.size_700 .video {width: 1244px;}
+  body.gallery .assets.size_700 .video .youtube_cont,
+  body.gallery .assets.size_700 .video .vimeo_cont {  width: 1244px;  height: 700px; margin: 0 auto;  }
+  .gallery .assets.size_700  .asset.video .copy {  width: 1100px;  padding: 10px 30px 0 0;  }
+
+
+
+
+/* Listing Assets */
+body.simple #content,
+body.listing #content {
+  width: 940px;
+  margin: 0 auto;
+}
+
+body.listing .assets {
+  margin-top: 20px;
+}
+body.listing #content .title_element {
+  width: 905px;
+  margin: 0 auto 45px;
+}
+body.listing #content .title_element .img { margin-bottom: 10px;}
+
+body.listing #content .listing_image {
+  float:left;
+  margin: 0 16px 31px 16px;
+}
+body.listing.images_have_text #content  .listing_image { margin-bottom: 20px;}
+
+
+body.listing #content .listing_image .copy a {
+  text-align: center;
+  width: 200px;
+  line-height: 1.35em;
+  text-decoration: none;
+  margin-top: 5px;
+	color: #555555;
+  font-size: 12px;
+  display:block;
+}
+
+
+
+
+body.simple  #menu_container  ,
+body.listing #menu_container {
+  position: relative;
+}
+body.simple  #content  ,
+body.listing #content {
+  margin-top: 60px;
+}
+
+
+/* Variable Image Style Definitions */
+
+/* Gallery Containers */
+
+.gallery .asset {
+  margin-right: 2px;
+}
+
+/* JScroll Scrollbard color */
+.jspDrag {
+  background: #555555;
+}
+
+.jspDrag:hover {
+  background: #555555;
+}

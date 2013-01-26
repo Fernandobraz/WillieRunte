@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>WillieRunte</title>
+    <%= stylesheet_link_tag    "application", :media => "all" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  </head>
+  <body>
+    <div class="page">
+      <div class="clearfix" id="menu_container">
+        <div class="menu_padding">
+          <div class="header_container clearfix">
+            <div id="head_logo">
+              <div id="logo">
+                <h1>
+                  <a href="#">WILLIE RUNTE</a>
+                </h1>
+              </div>
+            </div>
+            <div class="nav left_aligned_menu">
+              <div class="menu_wrap">
+                <ul id="menu" class="menu_list">
+                  <% open_books.each do |book| %>
+                  <li class="item top_level">
+                    <%= link_to book.name, books_path, :class => 'top_level_link' %>
+                  </li>
+                  <% end %>
+                  <li class="item  top_level">
+                    <a href='/about-me'  class="top_level_link">
+                      About Me
+                    </a>
+                  </li>
+                  <li class="social_icons_wrap top_level">
+                    <ul class="social_icons">
+
+                      <li class="icon_twitter social_icon">
+                        <a href="http://twitter.com/willieze" target="_blank">
+                          http://twitter.com/willieze
+                        </a>
+                      </li>
+
+
+                      <li class="icon_facebook social_icon">
+                        <a href="http://www.facebook.com/groups/207570836067/" target="_blank">
+                          http://www.facebook.com/groups/207570836067/
+                        </a>
+                      </li>
+
+
+
+                      <li class="icon_linkedin social_icon">
+                        <a href="http://www.linkedin.com/pub/willie-runte/22/843/64a" target="_blank">
+                          http://www.linkedin.com/pub/willie-runte/22/843/64a
+                        </a>
+                      </li>
+                    </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="content">
+        <div class="row">
+          <div class="span9"><%= yield %></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

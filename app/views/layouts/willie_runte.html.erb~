@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>WillieRunte</title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+<body>
+  <div class="clearfix" id="menu_container">
+    <div class="menu_padding">
+      <div class="header_container clearfix">
+        <div class="head_logo">
+          <div id="logo">
+            <h1>
+              <a href="#">WILLIE RUNTE</a>
+            </h1>
+          </div>
+        </div>
+        <div class="nav left_aligned_menu">
+          <div class="menu_wrap">
+            <ul id="menu" class="menu_list">
+              <% @books.each do |book| %>
+              <li class="item top_level">
+                <%= link_to book.name %>
+              </li>
+              <% end %>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="container">
+    <div class="row">
+      <div class="span9"><%= yield %></div>
+    </div>
+  </div>
+</body>
+</html>

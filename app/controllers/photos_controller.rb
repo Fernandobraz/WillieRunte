@@ -1,8 +1,9 @@
 class PhotosController < ApplicationController
+  before_filter :find_book
   # GET /photos
   # GET /photos.json
   def index
-    @photos = Photo.all
+    @photos = @book.photos
   end
 
   # GET /photos/1
@@ -20,11 +21,6 @@ class PhotosController < ApplicationController
   # GET /photos/new.json
   def new
     @photo = Photo.new
-
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @photo }
-    end
   end
 
   # GET /photos/1/edit
@@ -36,15 +32,11 @@ class PhotosController < ApplicationController
   # POST /photos.json
   def create
     @photo = Photo.new(params[:photo])
-
-    respond_to do |format|
-      if @photo.save
-        format.html { redirect_to @photo, notice: 'Photo was successfully created.' }
-        format.json { render json: @photo, status: :created, location: @photo }
-      else
-        format.html { render action: "new" }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
+    @photo.book = @book
+    if @photo.save
+      redirect_to book_photos_path(@book)
+    else
+      render action: "new"
     end
   end
 
@@ -56,15 +48,10 @@ class PhotosController < ApplicationController
   # PUT /photos/1.json
   def update
     @photo = Photo.find(params[:id])
-
-    respond_to do |format|
-      if @photo.update_attributes(params[:photo])
-        format.html { redirect_to @photo, notice: 'Photo was successfully updated.' }
-        format.json { head :no_content }
-      else
-        format.html { render action: "edit" }
-        format.json { render json: @photo.errors, status: :unprocessable_entity }
-      end
+    if @photo.update_attributes(params[:photo])
+      redirect_to book_photos_path(@book), notice: 'Photo saved successfully'
+    else
+      render action: "edit"
     end
   end
 
@@ -73,10 +60,11 @@ class PhotosController < ApplicationController
   def destroy
     @photo = Photo.find(params[:id])
     @photo.destroy
-
-    respond_to do |format|
-      format.html { redirect_to photos_url }
-      format.json { head :no_content }
-    end
+    redirect_to book_photos_path(@book), notice: "Photo deleted successfully"
   end
+
+  private
+    def find_book
+      @book = Book.find(params[:book_id]) if params[:book_id]
+    end
 end

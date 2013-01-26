@@ -1,0 +1,9 @@
+<div class="rail">
+  <ul id="photo_rail">
+    <% @photos.each do |photo| %>
+    <li class="photo_wagon">
+      <%= image_tag photo.image.url(:big) %>
+    </li>
+    <% end %>
+  </ul>a
+</div>
