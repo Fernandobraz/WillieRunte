@@ -14,11 +14,6 @@ class AboutController < ApplicationController
   # GET /abouts/1.json
   def show
     @about = About.find(params[:id])
-
-    respond_to do |format|
-      format.html # show.html.erb
-      format.json { render json: @about }
-    end
   end
 
   # GET /abouts/new
@@ -26,10 +21,7 @@ class AboutController < ApplicationController
   def new
     @about = About.new
 
-    respond_to do |format|
-      format.html # new.html.erb
-      format.json { render json: @about }
-    end
+
   end
 
   # GET /abouts/1/edit

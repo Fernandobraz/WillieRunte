@@ -1,3 +1,14 @@
-<div class="rail">
-
+<div class='assets size_700' style="width:20000px;">
+  <div id="assets_wrap">
+    <% @photos.each do |photo| %>
+    <div class="asset image loading">
+      <div class="wrap">
+        <div class="img">
+          <%= image_tag photo.image.url(:big) %>
+        </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
 </div>
+

@@ -5,7 +5,7 @@ class ShowcaseController < ApplicationController
   layout 'willie_runte'
 
   def index
-    ### @photos = @book.photos
+    @photos = @book.photos
 
   end
 

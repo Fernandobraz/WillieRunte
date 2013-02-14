@@ -436,13 +436,18 @@ ul.social_icons  li.social_icon a:hover { opacity: 1; }
 
 
 /* Image Text on Image Assets Popups */
+
+.image {
+  float: left;
+  margin-left: 2px;
+}
+
 .gallery .image .img {
   position: relative;
 }
 .gallery .image .img img {
 
-    height: 700px;
-
+  height: 700px;
   width: auto;
   display: block;
 }

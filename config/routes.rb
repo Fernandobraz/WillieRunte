@@ -1,5 +1,4 @@
 WillieRunte::Application.routes.draw do
-  resources :about
 
   resources :books do
     resources :photos
@@ -7,7 +6,7 @@ WillieRunte::Application.routes.draw do
 
   resources :showcase do
     member do
-      get 'rail'
+      get 'about'
     end
   end
 
