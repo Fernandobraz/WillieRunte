@@ -175,7 +175,10 @@ ul {   list-style: disc inside none; }
 
 
 #menu_container .menu_padding {
-  padding: 15px 20px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-top: 4px;
+
 }
 
 
@@ -339,7 +342,9 @@ ul {   list-style: disc inside none; }
 	text-align: center;
 	margin: 20px 0;
 }
-
+.header_container {
+  margin-top: 16px;
+}
 
 
 /* Social Icons */
@@ -441,6 +446,10 @@ ul.social_icons  li.social_icon a:hover { opacity: 1; }
   float: left;
   margin-left: 2px;
 }
+img {
+  height: 700px;
+  width: auto;
+}
 
 .gallery .image .img {
   position: relative;
@@ -480,6 +489,9 @@ ul.social_icons  li.social_icon a:hover { opacity: 1; }
 .gallery .assets {
   margin-left: 20px;
   overflow: hidden
+}
+.assets {
+  margin-top: 11px;
 }
 
 #assets_wrap {
@@ -568,6 +580,9 @@ body.listing #content .listing_image .copy a {
 
 
 
+#menu_container {
+  height: 65px;
+}
 
 body.simple  #menu_container  ,
 body.listing #menu_container {
